@@ -28,7 +28,7 @@ public class PowerSteam extends PowerSystem {
     private HashMap<String, SteamType> steamTypes = new HashMap<String, SteamType>();
     private HashMap<String, SteamType> serverSteamTypes = new HashMap<String, SteamType>();
     private List<String> serverSteamTypeNames = new ArrayList<String>();
-    public class SteamType {
+    public static class SteamType {
         public String name;
         public String displayName;
         public float defaultEnergyPerInput;

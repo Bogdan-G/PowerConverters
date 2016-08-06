@@ -15,7 +15,7 @@ import java.util.Map;
  * Class to manage the power systems.
  */
 public class PowerSystemManager {
-    private static PowerSystemManager instance;
+    private static volatile PowerSystemManager instance;
 
     private Map<String, PowerSystem> powerSystems = new HashMap<String, PowerSystem>();
 
