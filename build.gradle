@@ -21,10 +21,10 @@ repositories {
 		name = "ic2"
 		url = "http://maven.ic2.player.to/"
 	}
-	maven {
+	/*maven {
 		name = "calclavia"
 		url = "http://calclavia.com/maven/"
-	}
+	}*/
 
     maven{
         name "Waila Mobius Repo"
@@ -47,7 +47,7 @@ repositories {
 
 apply plugin: 'forge'
 apply plugin: 'maven'
-apply plugin: 'curseforge'
+//apply plugin: 'curseforge'
 
 // define the properties file
 ext.configFile = file "build.properties"
@@ -66,13 +66,17 @@ archivesBaseName = "PowerConverters"
 dependencies {
 	compile "net.industrial-craft:industrialcraft-2:${config.ic2_version}:api"
 	compile "com.mod-buildcraft:buildcraft:${config.buildcraft_version}:dev"
-	compile "dev.calclavia.resonantengine:resonant-engine:${config.resonantengine_version}:dev"
+	//compile "dev.calclavia.resonantengine:resonant-engine:${config.resonantengine_version}:dev"
     compile "mcp.mobius.waila:Waila:${config.waila_version}:dev"
 }
 
 minecraft {
 	version = config.minecraft_version + "-" + config.forge_version
 }
+
+// java version
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 String buildNumber = "unknown"
 version = "${config.minecraft_version}_${config.mod_version}"
@@ -113,7 +117,7 @@ configurations {
     deployerJars
 }
 
-uploadArchives {
+/*uploadArchives {
     dependsOn 'reobf'
     repositories {
         if(project.hasProperty("pushMaven")) {
@@ -131,11 +135,11 @@ uploadArchives {
             }
         }
     }
-}
+}*/
 
-ext.curseForgeReleaseType = null
+//ext.curseForgeReleaseType = null
 
-task ('curseGeneral') << {
+/*task ('curseGeneral') << {
     curse {
         projectId = '229499'
         if (project.hasProperty('curseForgeApiKey')) apiKey = project.curseForgeApiKey
@@ -178,4 +182,4 @@ task curseBeta << {
 task curseRelease << {
     setCurseRelease.execute()
     curseGeneral.execute()
-}
+}*/

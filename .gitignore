@@ -103,3 +103,7 @@ Desktop.ini
 eclipse/**
 out/**
 run/**
+builds
+fb
+/.gradle/
+build
